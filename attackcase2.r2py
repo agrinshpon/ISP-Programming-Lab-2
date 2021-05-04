@@ -1,10 +1,12 @@
-myfile = ABOpenfile("newtestfile.txt", True)
+if "testfile.txt.a" in listfiles():
+    removefiles("testfile.txt.a")
+if "testfile.txt.b" in listfiles():
+    removefiles("testfile.txt.b")
+myfile=ABopenfile("testfile.txt", True)
 
-myfile.writeat("SESE", 0)
-myfile.readat(None, 6)
-assert(myfile.readat(None, 0) == "SE")
-myfile.close()
+assert("SE" == myfile.readat(None, 0))
 
-myfile = ABopenfile("newtestfile.txt", False)
-assert(myfile.readat(None, 0) == "SESE")
+myfile.readat(500, 15)
+
+assert("SE" == myfile.readat(None, 0))
 myfile.close()
