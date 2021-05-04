@@ -2,11 +2,7 @@ if "testfile.txt.a" in listfiles():
     removefiles("testfile.txt.a")
 if "testfile.txt.b" in listfiles():
     removefiles("testfile.txt.b")
-myfile=ABopenfile("testfile.txt", True)
 
-assert("SE" == myfile.readat(None, 0))
-
-myfile.readat(500, 15)
-
-assert("SE" == myfile.readat(None, 0))
-myfile.close()
+A = ABopenfile("testfile.txt", True)
+B = ABopenfile("testfile.txt", True)
+A.close()
