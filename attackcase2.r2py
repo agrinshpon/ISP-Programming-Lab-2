@@ -1,0 +1,6 @@
+myfile = ABOpenfile("newtestfile.txt", True)
+
+myfile.writeat("SESE", 0)
+myfile.readat(None, 6)
+assert(myfile.readat(None, 0) == "SE")
+myfile.close()
